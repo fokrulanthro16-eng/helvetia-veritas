@@ -137,6 +137,8 @@ CURATED_PRESETS: List[PresetScenario] = [
 
 
 @app.get("/health", response_model=HealthStatus, tags=["System Health"])
+@app.get("/api/health", response_model=HealthStatus, tags=["System Health"])
+@app.get("/api/v1/health", response_model=HealthStatus, tags=["System Health"])
 async def health_check():
     """System health check and upstream sovereign cluster readiness."""
     return HealthStatus(
