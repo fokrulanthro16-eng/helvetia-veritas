@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  helvetia-veritas:
+    container_name: helvetia-veritas-engine
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+      - APERTUS_BASE_URL=https://api.inference.cscs.ch/v1
+      - APERTUS_API_KEY=sk-g233-cf0f91e16746db14ac15dd7e54e068cf
+      - APERTUS_MODEL=swiss-ai/Apertus-v1.5-70B
+      - APERTUS_FALLBACK_MODEL=swiss-ai/Apertus-v1.5-8B
+      - APERTUS_TIMEOUT_SECONDS=45.0
+      - APERTUS_MAX_RETRIES=3
+      - ATTESTATION_SECRET_SALT=HelvetiaVeritas-Sovereign-CSCS-Alps-Salt-2026
+    volumes:
+      - ./data:/app/data:ro
+      - ./frontend:/app/frontend:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - sovereign-net
+
+networks:
+  sovereign-net:
+    driver: bridge

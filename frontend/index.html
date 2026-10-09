@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelvetiaVeritas v2.0 | CantonalAudit AI</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23D52B1E'/><rect x='42' y='22' width='16' height='56' fill='white'/><rect x='22' y='42' width='56' height='16' fill='white'/></svg>">
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Embedded High-Contrast Sovereign Swiss Dark-Theme Stylesheet -->
+  <style>
+/* =====================================================================
+   HelvetiaVeritas v2.0 - Sovereign Swiss Dark-Theme Enterprise Styling
+   Track 1B: Swiss Voices • Apertus 70B & 8B Multi-Tier Normalization
+   ===================================================================== */
+
+:root {
+  --bg-core: #060B13;
+  --bg-sidebar: #09101C;
+  --bg-surface: #0D1624;
+  --bg-card: #111C2E;
+  --bg-card-hover: #16243A;
+  --bg-card-subtle: #0A121F;
+  --border-subtle: #1C2B42;
+  --border-prominent: #283D5D;
+  --border-active: #3D5A85;
+
+  --swiss-red: #D52B1E;
+  --swiss-red-hover: #B82015;
+  --swiss-red-glow: rgba(213, 43, 30, 0.28);
+  --swiss-red-subtle: rgba(213, 43, 30, 0.12);
+  --swiss-white: #FFFFFF;
+
+  --sovereign-emerald: #10B981;
+  --sovereign-emerald-glow: rgba(16, 185, 129, 0.22);
+  --sovereign-emerald-subtle: rgba(16, 185, 129, 0.12);
+  --apertus-cyan: #06B6D4;
+  --apertus-cyan-glow: rgba(6, 182, 212, 0.22);
+  --law-gold: #F59E0B;
+  --law-gold-bg: rgba(245, 158, 11, 0.12);
+  --fedlex-blue: #3B82F6;
+  --fedlex-blue-subtle: rgba(59, 130, 246, 0.12);
+
+  --canton-zh: #2563EB;
+  --canton-be: #DC2626;
+  --canton-bs: #64748B;
+  --canton-sg: #16A34A;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #8E9FB8;
+  --text-code: #38BDF8;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 24px rgba(213, 43, 30, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-core);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar Navigation */
+.app-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 120;
+  overflow-y: auto;
+}
+
+.sidebar-brand {
+  padding: 1.35rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(6, 11, 19, 0.4);
+}
+
+.swiss-cross-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--swiss-red);
+  border-radius: 9px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 14px var(--swiss-red-glow);
+  flex-shrink: 0;
+}
+
+.cross-v {
+  position: absolute;
+  width: 9px;
+  height: 25px;
+  background-color: var(--swiss-white);
+  border-radius: 2px;
+}
+
+.cross-h {
+  position: absolute;
+  width: 25px;
+  height: 9px;
+  background-color: var(--swiss-white);
+  border-radius: 2px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.brand-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--swiss-red);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.sidebar-nav {
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.nav-item {
+  padding: 0.7rem 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.18s ease;
+  position: relative;
+}
+
+.nav-item:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+  color: var(--text-primary);
+  background: var(--swiss-red-subtle);
+  border: 1px solid rgba(213, 43, 30, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-icon {
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+}
+
+.nav-label {
+  flex: 1;
+}
+
+.nav-active-indicator {
+  width: 4px;
+  height: 18px;
+  background-color: var(--swiss-red);
+  border-radius: 2px;
+  position: absolute;
+  right: 8px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1rem 0.85rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: rgba(6, 11, 19, 0.3);
+}
+
+.alpine-vector-graphic {
+  width: 100%;
+  height: 48px;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alpine-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slogan-badge {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.slogan-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--swiss-red);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.slogan-text {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.slogan-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* App Main Content */
+.app-main-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-core);
+}
+
+/* Header Strip */
+.app-header-strip {
+  padding: 0.85rem 1.75rem;
+  background-color: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pipeline-subtitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.status-badge.status-cscs {
+  background: var(--sovereign-emerald-subtle);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34D399;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.green-pulse {
+  background-color: var(--sovereign-emerald);
+  box-shadow: 0 0 8px #10B981;
+  animation: pulse-emerald 2s infinite;
+}
+
+@keyframes pulse-emerald {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.status-badge.status-fadp {
+  background: var(--fedlex-blue-subtle);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #60A5FA;
+}
+
+.status-badge.status-fedlex {
+  background: var(--law-gold-bg);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #FBBF24;
+}
+
+.user-avatar-cluster {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-prominent);
+  padding: 0.25rem 0.75rem 0.25rem 0.35rem;
+  border-radius: 24px;
+}
+
+.avatar-shield {
+  width: 28px;
+  height: 28px;
+  background: var(--swiss-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: white;
+  box-shadow: 0 2px 6px var(--swiss-red-glow);
+}
+
+.avatar-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-name {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.avatar-role {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+/* Presets Bar */
+.presets-section {
+  background: #090F1A;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.75rem 1.75rem;
+}
+
+.presets-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.presets-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.presets-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.preset-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.preset-btn:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-prominent);
+}
+
+.preset-btn.active {
+  background: var(--bg-card);
+  border-color: var(--swiss-red);
+  color: var(--text-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.canton-tag {
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.canton-tag.zh { background: rgba(37, 99, 235, 0.25); color: #60A5FA; }
+.canton-tag.be { background: rgba(220, 38, 38, 0.25); color: #F87171; }
+.canton-tag.bs { background: rgba(100, 116, 139, 0.35); color: #E2E8F0; }
+.canton-tag.sg { background: rgba(22, 163, 74, 0.25); color: #4ADE80; }
+
+/* Workspace Grid */
+.workspace-grid {
+  padding: 1.5rem 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1.18fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.column-left,
+.column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Swiss Alps Hero Banner */
+.hero-banner-alpine {
+  background: linear-gradient(180deg, #101B2E 0%, #0A1220 100%);
+  border: 1px solid var(--border-prominent);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.hero-banner-backdrop {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.hero-banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero-badge-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(213, 43, 30, 0.15);
+  border: 1px solid rgba(213, 43, 30, 0.4);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.hero-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status-pill-hero {
+  background: var(--sovereign-emerald-subtle);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34D399;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 0 12px var(--sovereign-emerald-glow);
+}
+
+/* Red Action Banner */
+.action-banner-red {
+  background: linear-gradient(135deg, #D52B1E 0%, #A11B12 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(213, 43, 30, 0.35);
+}
+
+.action-banner-text {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.action-banner-icon {
+  font-size: 1.6rem;
+}
+
+.action-banner-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.action-banner-sub {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.action-banner-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-open-report {
+  background: white;
+  color: var(--swiss-red);
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-open-report:hover {
+  background: #F8FAFC;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn-banner-transform {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.btn-banner-transform:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+
+/* Cantonal Heuristic Card */
+.canton-heuristic-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.confidence-pill {
+  background: var(--sovereign-emerald-subtle);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.canton-details-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #09101C;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.canton-flag {
+  font-size: 2.2rem;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.canton-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.canton-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.canton-sub {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.distribution-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.distribution-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.distribution-bar {
+  height: 8px;
+  background: #080C14;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.dist-seg {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.dist-zh { background-color: var(--canton-zh); }
+.dist-be { background-color: var(--canton-be); }
+.dist-bs { background-color: var(--canton-bs); }
+.dist-sg { background-color: var(--canton-sg); }
+
+.cantonal-gauges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 580px) {
+  .cantonal-gauges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.canton-gauge-card {
+  background: #09101C;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.canton-gauge-card.active-canton {
+  border-color: var(--swiss-red);
+  background: rgba(213, 43, 30, 0.08);
+}
+
+.canton-gauge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.canton-gauge-pct {
+  font-family: ui-monospace, monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.gauge-meter-bg {
+  width: 100%;
+  height: 5px;
+  background: #111C2E;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.gauge-meter-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}
+
+.gauge-zh { background: var(--canton-zh); }
+.gauge-be { background: var(--canton-be); }
+.gauge-bs { background: var(--canton-bs); }
+.gauge-sg { background: var(--canton-sg); }
+
+.markers-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.markers-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.tags-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.marker-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.marker-token {
+  font-weight: 800;
+  color: #38BDF8;
+}
+
+.marker-arrow {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.marker-gloss {
+  color: var(--text-secondary);
+}
+
+.phonology-group {
+  background: rgba(13, 22, 36, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+}
+
+.phonology-list {
+  padding-left: 1.1rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+
+/* Attestation Card */
+.attestation-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.attestation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.attestation-shield {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.shield-icon {
+  font-size: 1.3rem;
+}
+
+.attestation-title {
+  font-size: 0.95rem;
+  display: block;
+}
+
+.attestation-status {
+  font-size: 0.76rem;
+  color: #34D399;
+  font-weight: 700;
+}
+
+.cert-btn {
+  background: var(--apertus-cyan-glow);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  color: #38BDF8;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.cert-btn:hover {
+  background: rgba(6, 182, 212, 0.25);
+}
+
+.hashes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+@media (max-width: 600px) {
+  .hashes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hash-item {
+  background: #09101C;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hash-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hash-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.76rem;
+  color: var(--text-code);
+  word-break: break-all;
+  line-height: 1.3;
+}
+
+.attestation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.2rem;
+}
+
+.dossier-pdf-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1C2738 0%, #101826 100%);
+  border: 1px solid var(--swiss-red);
+  color: white;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(213, 43, 30, 0.2);
+}
+
+.dossier-pdf-btn:hover {
+  background: linear-gradient(135deg, #D52B1E 0%, #B82015 100%);
+  box-shadow: 0 6px 18px rgba(213, 43, 30, 0.4);
+  transform: translateY(-1px);
+}
+
+.download-btn {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-prominent);
+  color: var(--text-secondary);
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border-color: var(--apertus-cyan);
+}
+
+/* Dialect Input Card */
+.dialect-input-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.input-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.language-badge {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38BDF8;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.canton-select {
+  background: #09101C;
+  border: 1px solid var(--border-prominent);
+  color: var(--text-primary);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.canton-select:focus {
+  outline: none;
+  border-color: var(--apertus-cyan);
+}
+
+.textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dialect-textarea {
+  width: 100%;
+  background: #070D17;
+  border: 1px solid var(--border-prominent);
+  border-left: 4px solid var(--swiss-red);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+  color: #F1F5F9;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 160px;
+  transition: border-color 0.2s ease;
+  font-style: italic;
+}
+
+.dialect-textarea:focus {
+  outline: none;
+  border-color: var(--apertus-cyan);
+  border-left-color: var(--swiss-red);
+  background: #09101C;
+}
+
+.textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.text-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.text-action-btn:hover {
+  color: #F87171;
+}
+
+.model-selection-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  background: #09101C;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.model-switch-cluster {
+  display: flex;
+  background: #060B13;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-prominent);
+  gap: 3px;
+}
+
+.model-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.model-toggle-btn:hover {
+  color: var(--text-primary);
+}
+
+.model-toggle-btn.active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-prominent);
+}
+
+.model-toggle-btn.active.tier-70b {
+  color: #38BDF8;
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+.model-toggle-btn.active.tier-8b {
+  color: #34D399;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.primary-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #D52B1E 0%, #A11B12 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  box-shadow: 0 4px 18px rgba(213, 43, 30, 0.35);
+  transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #EA2E20 0%, #B82015 100%);
+  box-shadow: 0 6px 24px rgba(213, 43, 30, 0.5);
+  transform: translateY(-1px);
+}
+
+.primary-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-badge {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Telemetry Strip */
+.telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  background: #09101C;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 680px) {
+  .telemetry-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.telemetry-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.telemetry-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.telemetry-val {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.telemetry-val.highlight {
+  color: #38BDF8;
+}
+
+/* Output Card */
+.output-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-prominent);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-card);
+}
+
+.output-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--border-prominent);
+}
+
+.normalized-box {
+  background: #070D17;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #F1F5F9;
+  white-space: pre-wrap;
+  min-height: 140px;
+}
+
+.pipeline-runtime-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: #09101C;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+
+.runtime-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+}
+
+.runtime-dot.active {
+  background-color: #10B981;
+  box-shadow: 0 0 6px #10B981;
+}
+
+/* Statutes Card */
+.statutes-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.statutes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statutes-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statutes-icon {
+  font-size: 1.4rem;
+}
+
+.statutes-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.statutes-domain {
+  font-size: 0.82rem;
+  color: var(--law-gold);
+  font-weight: 700;
+}
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.article-row {
+  background: #09101C;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.95rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: border-color 0.2s;
+}
+
+.article-row:hover {
+  border-color: var(--border-prominent);
+}
+
+.article-headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.article-badge-law {
+  background-color: var(--law-gold-bg);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.article-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.article-relevance {
+  font-size: 0.78rem;
+  color: #34D399;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.article-summary {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.article-remedy {
+  font-size: 0.84rem;
+  color: #93C5FD;
+  background: rgba(37, 99, 235, 0.12);
+  padding: 0.55rem 0.75rem;
+  border-radius: 4px;
+  border-left: 3px solid #3B82F6;
+}
+
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  margin-top: 0.25rem;
+}
+
+.article-authority {
+  color: var(--text-muted);
+}
+
+.article-fedlex-link {
+  color: #38BDF8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.article-fedlex-link:hover {
+  text-decoration: underline;
+}
+
+.procedural-steps-card {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.steps-title {
+  font-size: 0.88rem;
+  color: #34D399;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.steps-list {
+  padding-left: 1.2rem;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* Certificate Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-prominent);
+  border-radius: var(--radius-lg);
+  max-width: 820px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #09101C;
+}
+
+.modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.modal-crest {
+  font-size: 1.8rem;
+}
+
+.modal-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.modal-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cert-formal-header {
+  display: flex;
+  gap: 1.5rem;
+  background: #070D17;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  align-items: center;
+}
+
+.cert-stamp {
+  width: 130px;
+  height: 90px;
+  border: 2px dashed var(--swiss-red);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--swiss-red);
+  font-weight: 800;
+  padding: 0.4rem;
+  flex-shrink: 0;
+}
+
+.stamp-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.stamp-code {
+  font-size: 0.7rem;
+}
+
+.stamp-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.cert-metadata {
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--text-secondary);
+}
+
+.cert-metadata span {
+  color: var(--text-primary);
+  font-family: ui-monospace, monospace;
+}
+
+.raw-json-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.json-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.copy-json-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.copy-json-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-prominent);
+}
+
+.json-pre {
+  background: #05080E;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  max-height: 280px;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  color: #38BDF8;
+  line-height: 1.45;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  background-color: #09101C;
+}
+
+.modal-action-btn {
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-action-btn.primary {
+  background: var(--swiss-red);
+  color: white;
+}
+
+.modal-action-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Footer */
+.app-footer {
+  background-color: var(--bg-sidebar);
+  border-top: 1px solid var(--border-subtle);
+  padding: 0.9rem 1.75rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  .app-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .sidebar-brand {
+    padding: 1rem 1.25rem;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.5rem 1rem;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
+  .sidebar-footer {
+    display: none;
+  }
+  .workspace-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .telemetry-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .header-right {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .telemetry-strip {
+    grid-template-columns: 1fr;
+  }
+  .hashes-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-formal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .canton-details-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .action-banner-red {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .action-banner-btns {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ================================================================= -->
+    <!-- 1. SIDEBAR NAVIGATION (LEFT PANEL)                                -->
+    <!-- ================================================================= -->
+    <aside class="app-sidebar" aria-label="Hauptnavigation">
+      <div class="sidebar-brand">
+        <div class="swiss-cross-icon" aria-hidden="true">
+          <div class="cross-v"></div>
+          <div class="cross-h"></div>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">HelvetiaVeritas</span>
+          <span class="brand-tag">CANTONAL AUDIT AI</span>
+        </div>
+      </div>
+
+      <!-- Vertical Menu Items -->
+      <nav class="sidebar-nav">
+        <a href="#dashboard" class="nav-item active" aria-current="page">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Dashboard</span>
+          <span class="nav-active-indicator" aria-hidden="true"></span>
+        </a>
+        <a href="#analysen" class="nav-item">
+          <span class="nav-icon">⚖️</span>
+          <span class="nav-label">Analysen</span>
+        </a>
+        <a href="#dokumente" class="nav-item">
+          <span class="nav-icon">📁</span>
+          <span class="nav-label">Dokumente</span>
+        </a>
+        <a href="#suche" class="nav-item">
+          <span class="nav-icon">🔍</span>
+          <span class="nav-label">Suche</span>
+        </a>
+        <a href="#berichte" class="nav-item">
+          <span class="nav-icon">📜</span>
+          <span class="nav-label">Berichte</span>
+        </a>
+        <a href="#einstellungen" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Einstellungen</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer with Alpine Vector Graphic & Sovereignty Slogan -->
+      <div class="sidebar-footer">
+        <div class="alpine-vector-graphic" aria-hidden="true">
+          <svg class="alpine-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mountain silhouette back -->
+            <polygon points="10,55 45,22 80,55" fill="#1C2B42" opacity="0.6"/>
+            <polygon points="65,55 110,12 155,55" fill="#283D5D" opacity="0.8"/>
+            <polygon points="140,55 185,18 230,55" fill="#1C2B42" opacity="0.6"/>
+            <!-- Front Alpine peaks -->
+            <polygon points="30,55 75,28 120,55" fill="#22334D"/>
+            <polygon points="100,55 145,20 190,55" fill="#2E466B"/>
+            <!-- Snow caps -->
+            <polygon points="110,12 100,21 120,21" fill="#F8FAFC" opacity="0.9"/>
+            <polygon points="145,20 137,28 153,28" fill="#F8FAFC" opacity="0.85"/>
+            <polygon points="45,22 38,30 52,30" fill="#F8FAFC" opacity="0.8"/>
+            <polygon points="185,18 178,26 192,26" fill="#F8FAFC" opacity="0.8"/>
+            <!-- Base contour line -->
+            <line x1="5" y1="55" x2="235" y2="55" stroke="#D52B1E" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="slogan-badge">
+          <span class="slogan-title">Schweizer Souveränität</span>
+          <p class="slogan-text">Schweiz. Mehrsprachig. Rechtssicher. KI-gestützt.</p>
+          <span class="slogan-sub">revDSG / FADP Art. 6 Konform • CSCS</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ================================================================= -->
+    <!-- 2. MAIN APP CONTENT                                               -->
+    <!-- ================================================================= -->
+    <div class="app-main-content">
+
+      <!-- Top Header Strip -->
+      <header class="app-header-strip">
+        <div class="header-left">
+          <p class="pipeline-subtitle">
+            Sovereign Multi-Cantonal Dialect-to-Statute Normalization Pipeline • CSCS Alps Apertus 70B
+          </p>
+        </div>
+
+        <div class="header-right">
+          <!-- Live status badges -->
+          <div class="status-badge status-cscs" id="status-cscs" title="CSCS Alps Supercomputer (Lugano, TI) Inferenz aktiv">
+            <span class="status-dot green-pulse" aria-hidden="true"></span>
+            <span id="header-status-text">CSCS Alps (Lugano) • Apertus 70B</span>
+          </div>
+          <div class="status-badge status-fadp" title="Swiss Federal Act on Data Protection Compliant">
+            <span aria-hidden="true">🛡️</span>
+            <span>FADP / revDSG Art. 6 Souverän</span>
+          </div>
+          <div class="status-badge status-fedlex" title="Aligned with Swiss ZGB, OR, SchKG & DBG">
+            <span aria-hidden="true">🇨🇭</span>
+            <span>CH Fedlex Tier-4 Statuten-Index</span>
+          </div>
+
+          <!-- User Avatar Cluster -->
+          <div class="user-avatar-cluster" title="Eidgenössischer Auditor angemeldet">
+            <div class="avatar-shield" aria-hidden="true">CH</div>
+            <div class="avatar-meta">
+              <span class="avatar-name">Bund / Justiz</span>
+              <span class="avatar-role">Auditor</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Presets Selection Bar -->
+      <section class="presets-section" aria-label="Fallbeispiele">
+        <div class="presets-container">
+          <div class="presets-label">
+            <span aria-hidden="true">⚡</span>
+            <span>Reale Schweizer Bürgerfälle (Presets):</span>
+          </div>
+          <div class="presets-list" id="presets-container">
+            <button class="preset-btn active" data-preset="zh-tenancy-mold">
+              <span class="canton-tag zh">ZH</span>
+              <span>Zürich: Mietzinsstreit & Schimmel</span>
+            </button>
+            <button class="preset-btn" data-preset="be-building-permit">
+              <span class="canton-tag be">BE</span>
+              <span>Bern: Baueinsprache Autowerkstatt</span>
+            </button>
+            <button class="preset-btn" data-preset="bs-labor-overtime">
+              <span class="canton-tag bs">BS</span>
+              <span>Basel: Lohnausstand & Überstunden</span>
+            </button>
+            <button class="preset-btn" data-preset="sg-property-noise">
+              <span class="canton-tag sg">SG</span>
+              <span>St. Gallen: Sonntags-Lärmbelästigung</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dual Column Workspace Grid -->
+      <main class="workspace-grid" id="dashboard">
+
+        <!-- =============================================================== -->
+        <!-- LEFT COLUMN                                                     -->
+        <!-- =============================================================== -->
+        <div class="column-left">
+
+          <!-- 1. Swiss Alps Hero Banner -->
+          <section class="hero-banner-alpine" aria-label="Hero Banner">
+            <div class="hero-banner-backdrop" aria-hidden="true">
+              <svg viewBox="0 0 300 120" fill="none" style="width: 100%; height: 100%;">
+                <polygon points="50,120 150,20 250,120" fill="#3B82F6" opacity="0.3"/>
+                <polygon points="120,120 200,35 280,120" fill="#D52B1E" opacity="0.2"/>
+              </svg>
+            </div>
+            <div class="hero-banner-content">
+              <div class="hero-title-group">
+                <div class="hero-badge-icon" aria-hidden="true">🏔️</div>
+                <div>
+                  <h1 class="hero-title">Kantonale Rechts-Analyse</h1>
+                  <p class="hero-subtitle">Souveräner föderaler Prüfbericht gemäss Schweizer Bundesrecht</p>
+                </div>
+              </div>
+              <div class="status-pill-hero">
+                <span class="status-dot" style="background: #10B981;" aria-hidden="true"></span>
+                <span id="hero-status-text">Analyse abgeschlossen</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Red Action Banner -->
+          <section class="action-banner-red" aria-label="Aktions-Banner">
+            <div class="action-banner-text">
+              <span class="action-banner-icon" aria-hidden="true">⚖️</span>
+              <div>
+                <h2 class="action-banner-title">Souverän Transformieren & Prüfen (Apertus 70B)</h2>
+                <p class="action-banner-sub">Amtliche Normalisierung & ZGB/OR Abgleich via CSCS Alps</p>
+              </div>
+            </div>
+            <div class="action-banner-btns">
+              <button type="button" class="btn-banner-transform" id="banner-transform-btn">
+                <span>⚡ Jetzt Prüfen</span>
+              </button>
+              <button type="button" class="btn-open-report" id="banner-open-report-btn">
+                <span>Bericht öffnen</span>
+                <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- 3. Cantonal Heuristic Card -->
+          <section class="canton-heuristic-card" id="canton-card" aria-label="Kantonale Heuristik-Analyse">
+            <div class="card-header-flex">
+              <span class="card-header-label">KANTONALE HEURISTIK-ANALYSE</span>
+              <span class="confidence-pill" id="canton-confidence">90% Konfidenz</span>
+            </div>
+
+            <!-- Cantonal Badge & Metadata -->
+            <div class="canton-details-row">
+              <div class="canton-flag" id="canton-flag-display" aria-hidden="true">🔵⚪</div>
+              <div class="canton-meta">
+                <h3 class="canton-title" id="canton-name-display">Zürich (ZH)</h3>
+                <p class="canton-sub" id="canton-dialect-display">Züritüütsch • 15.9% Dialektdichte • Hauptort: Zürich</p>
+              </div>
+            </div>
+
+            <!-- Multi-segment Cantonal Progress Bar (ZH, BE, BS, SG) -->
+            <div class="distribution-section">
+              <div class="distribution-labels">
+                <span>ZH (62%)</span><span>BE (18%)</span><span>BS (12%)</span><span>SG (8%)</span>
+              </div>
+              <div class="distribution-bar" role="progressbar" aria-label="Kantonale Dialekt-Verteilung">
+                <div class="dist-seg dist-zh" id="dist-zh" style="width: 62%;" title="Zürich"></div>
+                <div class="dist-seg dist-be" id="dist-be" style="width: 18%;" title="Bern"></div>
+                <div class="dist-seg dist-bs" id="dist-bs" style="width: 12%;" title="Basel"></div>
+                <div class="dist-seg dist-sg" id="dist-sg" style="width: 8%;" title="St. Gallen"></div>
+              </div>
+            </div>
+
+            <!-- Cantonal Confidence Gauges Grid -->
+            <div class="cantonal-gauges-grid" id="cantonal-gauges-grid">
+              <div class="canton-gauge-card active-canton" id="gauge-card-zh">
+                <div class="canton-gauge-header">
+                  <span style="color: var(--canton-zh);">Zürich (ZH)</span>
+                  <span class="canton-gauge-pct" id="gauge-pct-zh">62%</span>
+                </div>
+                <div class="gauge-meter-bg">
+                  <div class="gauge-meter-fill gauge-zh" id="gauge-fill-zh" style="width: 62%;"></div>
+                </div>
+              </div>
+              <div class="canton-gauge-card" id="gauge-card-be">
+                <div class="canton-gauge-header">
+                  <span style="color: var(--canton-be);">Bern (BE)</span>
+                  <span class="canton-gauge-pct" id="gauge-pct-be">18%</span>
+                </div>
+                <div class="gauge-meter-bg">
+                  <div class="gauge-meter-fill gauge-be" id="gauge-fill-be" style="width: 18%;"></div>
+                </div>
+              </div>
+              <div class="canton-gauge-card" id="gauge-card-bs">
+                <div class="canton-gauge-header">
+                  <span style="color: var(--canton-bs);">Basel (BS)</span>
+                  <span class="canton-gauge-pct" id="gauge-pct-bs">12%</span>
+                </div>
+                <div class="gauge-meter-bg">
+                  <div class="gauge-meter-fill gauge-bs" id="gauge-fill-bs" style="width: 12%;"></div>
+                </div>
+              </div>
+              <div class="canton-gauge-card" id="gauge-card-sg">
+                <div class="canton-gauge-header">
+                  <span style="color: var(--canton-sg);">St. Gallen (SG)</span>
+                  <span class="canton-gauge-pct" id="gauge-pct-sg">8%</span>
+                </div>
+                <div class="gauge-meter-bg">
+                  <div class="gauge-meter-fill gauge-sg" id="gauge-fill-sg" style="width: 8%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dialect Marker Chips (Extracted Tokens) -->
+            <div class="markers-group">
+              <span class="markers-title">Identifizierte Dialektmarker & Bedeutungen:</span>
+              <div class="tags-cluster" id="lexical-tags-container">
+                <span class="marker-tag"><span class="marker-token">sali</span><span class="marker-arrow">→</span><span class="marker-gloss">Guten Tag / Hallo</span></span>
+                <span class="marker-tag"><span class="marker-token">zäme</span><span class="marker-arrow">→</span><span class="marker-gloss">zusammen / miteinander</span></span>
+                <span class="marker-tag"><span class="marker-token">wöschchuchi</span><span class="marker-arrow">→</span><span class="marker-gloss">Waschküche</span></span>
+                <span class="marker-tag"><span class="marker-token">nüüt</span><span class="marker-arrow">→</span><span class="marker-gloss">nichts</span></span>
+                <span class="marker-tag"><span class="marker-token">ghörig</span><span class="marker-arrow">→</span><span class="marker-gloss">ordentlich</span></span>
+                <span class="marker-tag"><span class="marker-token">scho</span><span class="marker-arrow">→</span><span class="marker-gloss">schon</span></span>
+                <span class="marker-tag"><span class="marker-token">mached</span><span class="marker-arrow">→</span><span class="marker-gloss">machen (Plural)</span></span>
+                <span class="marker-tag"><span class="marker-token">händ</span><span class="marker-arrow">→</span><span class="marker-gloss">haben (Plural)</span></span>
+                <span class="marker-tag"><span class="marker-token">abghänkt</span><span class="marker-arrow">→</span><span class="marker-gloss">aufgelegt</span></span>
+                <span class="marker-tag"><span class="marker-token">chinde</span><span class="marker-arrow">→</span><span class="marker-gloss">Kinder</span></span>
+              </div>
+            </div>
+
+            <!-- Phonological Alemannic Traits -->
+            <div class="phonology-group" id="phonology-group">
+              <span class="markers-title">Phonologische Alemannische Merkmale:</span>
+              <ul class="phonology-list" id="phonology-list">
+                <li class="phonology-item"><strong>-ed Plural-Endung:</strong> Verbal-Plural auf -ed (mached, händ, huested) <em>(Fundstellen: mached, händ)</em></li>
+                <li class="phonology-item"><strong>'üüt' Langvokal:</strong> Erhalt der mittelhochdeutschen Vokaldehnung (nüüt, drüü, lüüt) <em>(Fundstellen: nüüt, drüü)</em></li>
+                <li class="phonology-item"><strong>Initiales ch-:</strong> Alemannische Spirantisierung der germanischen Tenues <em>(Fundstellen: chinde, chuchi)</em></li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- 4. Cryptographic Attestation Card -->
+          <section class="attestation-card" id="attestation-card" aria-label="Audit-Zertifikat">
+            <div class="attestation-header">
+              <div class="attestation-shield">
+                <span class="shield-icon" aria-hidden="true">🔒</span>
+                <div>
+                  <strong class="attestation-title">Kryptographisches FADP / revDSG Audit-Zertifikat</strong>
+                  <span class="attestation-status" id="attestation-status-badge">SHA-256 Validiert</span>
+                </div>
+              </div>
+              <button type="button" id="view-cert-modal-btn" class="cert-btn">
+                <span>🔍 Details</span>
+              </button>
+            </div>
+
+            <div class="hashes-grid">
+              <div class="hash-item">
+                <span class="hash-label">Bürger-Input Hash:</span>
+                <code class="hash-code" id="hash-input">8f3b...19e4</code>
+              </div>
+              <div class="hash-item">
+                <span class="hash-label">Normierter Text Hash:</span>
+                <code class="hash-code" id="hash-normalized">c4a1...78b0</code>
+              </div>
+              <div class="hash-item">
+                <span class="hash-label">Composite Digest:</span>
+                <code class="hash-code" id="hash-composite">e710...52f9</code>
+              </div>
+              <div class="hash-item">
+                <span class="hash-label">HMAC-256 Stempel:</span>
+                <code class="hash-code" id="hash-signature">9a22...31c4</code>
+              </div>
+            </div>
+
+            <div class="attestation-actions">
+              <button type="button" id="download-pdf-btn" class="dossier-pdf-btn">
+                <span aria-hidden="true">🏛️</span>
+                <span>Offizielles Audit-Dossier herunterladen (.PDF)</span>
+              </button>
+              <button type="button" id="download-audit-btn" class="download-btn">
+                <span aria-hidden="true">📥</span>
+                <span>SHA-256 Audit-Zertifikat herunterladen (.JSON)</span>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- =============================================================== -->
+        <!-- RIGHT COLUMN                                                    -->
+        <!-- =============================================================== -->
+        <div class="column-right">
+
+          <!-- 1. Original Dialect Input Card with Quote Styling -->
+          <section class="dialect-input-card" aria-label="Eingabe Schweizer Mundart">
+            <div class="input-card-header">
+              <div class="language-badge">
+                <span aria-hidden="true">🇨🇭</span>
+                <span>Deutsch (Schweizer Dialekt)</span>
+              </div>
+              <select id="canton-hint-select" class="canton-select" aria-label="Kantonale Vorwahl">
+                <option value="">Auto-Erkennung (ZH/BE/BS/SG)</option>
+                <option value="ZH" selected>Zürich (Züritüütsch)</option>
+                <option value="BE">Bern (Bärndütsch)</option>
+                <option value="BS">Basel-Stadt (Baseldytsch)</option>
+                <option value="SG">St. Gallen (Sanggallerdütsch)</option>
+              </select>
+            </div>
+
+            <div class="textarea-wrapper">
+              <textarea 
+                id="dialect-input" 
+                class="dialect-textarea" 
+                rows="7" 
+                placeholder="Geben Sie hier die Petition, Mängelrüge oder Beschwerde im Schweizerdeutschen Dialekt ein..."
+                spellcheck="false"
+              >Sali zäme, mini Wöschchuchi isch sit zwoo Wuche voll Schimmel und d'Heizig im dritte Stock lauft nüüt meh ghörig. Ich han de Verwaltig scho drüü Mal aglüütet, aber die mached eifach nüüt und händ geschter sogar abghänkt! Chinde huested scho wägem Gstank. Ich han am 1. Oktober CHF 2'400.- Mietzins zahlt und wott jetzt wüsse, wie ich de Mietzins chan hinterlege oder reduziere.</textarea>
+              <div class="textarea-footer">
+                <span id="char-word-counter">410 Zeichen • 66 Wörter</span>
+                <button type="button" id="clear-btn" class="text-action-btn" title="Eingabe leeren">Text löschen</button>
+              </div>
+            </div>
+
+            <!-- Model Selection Switcher (70B vs 8B) -->
+            <div class="model-selection-wrapper">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.1rem;" aria-hidden="true">🧠</span>
+                <div>
+                  <strong style="font-size: 0.82rem; color: var(--text-primary); display: block;">CSCS Alps Inferenz-Modell</strong>
+                  <span style="font-size: 0.72rem; color: var(--text-muted);" id="model-desc-text">Apertus 70B für höchste juristische Präzision</span>
+                </div>
+              </div>
+              <div class="model-switch-cluster" id="model-switcher" role="radiogroup" aria-label="Modell-Auswahl">
+                <button type="button" class="model-toggle-btn active tier-70b" id="model-switch-70b" data-model="apertus-1.5-70b" role="radio" aria-checked="true">
+                  <span>⚡ Apertus 70B (Souverän)</span>
+                </button>
+                <button type="button" class="model-toggle-btn tier-8b" id="model-switch-8b" data-model="apertus-1.5-8b" role="radio" aria-checked="false">
+                  <span>🚀 Apertus 8B (Fast &lt;800ms)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Submit Primary Action -->
+            <button type="button" id="submit-btn" class="primary-btn">
+              <span aria-hidden="true">⚖️</span>
+              <span>Souverän Transformieren & Prüfen</span>
+              <span class="btn-badge" id="submit-badge">Apertus 70B</span>
+            </button>
+          </section>
+
+          <!-- 2. Live Dynamic Telemetry Strip -->
+          <div class="telemetry-strip" id="telemetry-strip" aria-label="Inferenz Telemetrie">
+            <div class="telemetry-item">
+              <span class="telemetry-label">Inferenz-Laufzeit</span>
+              <span class="telemetry-val highlight" id="telem-duration">1681 ms</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Geschwindigkeit</span>
+              <span class="telemetry-val" id="telem-tokens-sec">29.7 tok/s</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Time to 1st Token</span>
+              <span class="telemetry-val" id="telem-ttft">538 ms</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">Souveränes Modell</span>
+              <span class="telemetry-val highlight" id="telem-model-tier">Apertus 70B (Souverän)</span>
+            </div>
+          </div>
+
+          <!-- 3. Normalized Schweizer Hochdeutsch Output Card -->
+          <section class="output-card" aria-label="Normiertes Schweizer Hochdeutsch">
+            <div class="output-card-header">
+              <div class="output-title-group">
+                <span aria-hidden="true">🇨🇭</span>
+                <strong>Normiertes Schweizer Hochdeutsch (Gerichtsfest)</strong>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <div class="pipeline-runtime-badge" id="runtime-badge">
+                  <span class="runtime-dot active" aria-hidden="true"></span>
+                  <span id="runtime-text">1681 ms • Apertus-70B</span>
+                </div>
+                <button type="button" id="copy-normalized-btn" class="copy-btn" title="Text in Zwischenablage kopieren">
+                  <span>📋 Kopieren</span>
+                </button>
+              </div>
+            </div>
+            <div class="normalized-box" id="normalized-output">Sehr geehrte Damen und Herren,
+
+in meiner Mietwohnung besteht seit zwei Wochen ein erheblicher Mangel: Die Waschküche weist starken Schimmelbefall auf, und die Heizung im dritten Obergeschoss funktioniert nicht mehr ordnungsgemäss. Trotz dreimaliger telefonischer Rüge hat die Liegenschaftsverwaltung keinerlei Massnahmen ergriffen. Aufgrund des anhaltenden Schimmelgeruchs husten die Kinder bereits.
+
+Für den Monat Oktober wurde der reguläre Mietzins in Höhe von CHF 2'400.– vollständig entrichtet. Gestützt auf Art. 259a ff. OR verlange ich die unverzügliche Behebung der Mängel sowie eine verhältnismässige Herabsetzung des Mietzinses und behalte mir die amtliche Hinterlegung vor.
+
+Mit freundlichen Grüssen</div>
+          </section>
+
+          <!-- 4. Identifizierte Schweizer Gesetzesartikel Card -->
+          <section class="statutes-card" aria-label="Identifizierte Schweizer Gesetzesartikel">
+            <div class="statutes-header">
+              <div class="statutes-title-group">
+                <span class="statutes-icon" aria-hidden="true">📖</span>
+                <div>
+                  <h3 class="statutes-title">Identifizierte Schweizer Gesetzesartikel</h3>
+                  <p class="statutes-domain" id="primary-domain-badge">Hauptrechtsgebiet: Mietrecht (Tenancy)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detailed Statutory Cards for OR Art. 259a and OR Art. 259d -->
+            <div class="articles-list" id="articles-list-container">
+              <div class="article-row">
+                <div class="article-headline">
+                  <span class="article-badge-law">OR Art. 259a</span>
+                  <span class="article-name">Mängel während der Mietdauer (Rechte des Mieters)</span>
+                  <span class="article-relevance">83% Relevanz</span>
+                </div>
+                <p class="article-summary">Entstehen an der Mietsache Mängel, die der Mieter weder zu vertreten noch auf eigene Kosten zu beseitigen hat, so kann er verlangen, dass der Vermieter den Mangel beseitigt, den Mietzins verhältnismässig herabsetzt, Schadenersatz leistet oder den Rechtsstreit mit einem Dritten übernimmt.</p>
+                <div class="article-remedy">
+                  <strong>Handlungsempfehlung:</strong> Mängelrüge schriftlich per Einschreiben mit Fristansetzung (10–14 Tage) an die Liegenschaftsverwaltung zustellen. Fotodokumentation des Schimmels beilegen.
+                </div>
+                <div class="article-footer">
+                  <span class="article-authority">Zuständig: Schlichtungsbehörde für Mietverhältnisse Zürich</span>
+                  <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_259_a" target="_blank" rel="noopener noreferrer" class="article-fedlex-link">Fedlex Gesetzestext ↗</a>
+                </div>
+              </div>
+
+              <div class="article-row">
+                <div class="article-headline">
+                  <span class="article-badge-law">OR Art. 259d</span>
+                  <span class="article-name">Herabsetzung des Mietzinses</span>
+                  <span class="article-relevance">52% Relevanz</span>
+                </div>
+                <p class="article-summary">Wird die Tauglichkeit der Sache zum vorausgesetzten Gebrauch gemindert, so kann der Mieter vom Vermieter verlangen, dass er den Mietzins vom Zeitpunkt, in dem er vom Mangel Kenntnis erhalten hat, bis zur Behebung des Mangels verhältnismässig herabsetzt.</p>
+                <div class="article-remedy">
+                  <strong>Handlungsempfehlung:</strong> Mietzinsminderung rückwirkend ab Zugang der ersten Rüge geltend machen; bei Untätigkeit Mietzinshinterlegung gemäss Art. 259g OR androhen.
+                </div>
+                <div class="article-footer">
+                  <span class="article-authority">Zuständig: Schlichtungsbehörde für Mietverhältnisse Zürich</span>
+                  <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_259_d" target="_blank" rel="noopener noreferrer" class="article-fedlex-link">Fedlex Gesetzestext ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Procedural Action Steps -->
+            <div class="procedural-steps-card" id="procedural-card">
+              <h4 class="steps-title">📋 Amtliche Handlungsempfehlungen für den Bürger:</h4>
+              <ul class="steps-list" id="procedural-steps-list">
+                <li>1. Mängeldokumentation (Fotos, Zeugen, Temperatur- und Feuchtigkeitsprotokoll) unverzüglich erstellen.</li>
+                <li>2. Eingeschriebener Brief mit 10-Tagesfrist zur Behebung an die Verwaltung absenden.</li>
+                <li>3. Bei Fristablauf: Androhung der Mietzinshinterlegung bei der Schlichtungsbehörde gemäss Art. 259g OR vollziehen.</li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div class="footer-container">
+          <div>
+            <strong>HelvetiaVeritas v2.0</strong> • Hack Apertus Track 1B: Swiss Voices
+          </div>
+          <div>
+            Host: CSCS Alps Supercomputing Centre (Lugano, TI) • revDSG SR 235.1 Konformität
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- CRYPTOGRAPHIC AUDIT CERTIFICATE MODAL                               -->
+  <!-- =================================================================== -->
+  <div class="modal-backdrop" id="cert-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-crest" aria-hidden="true">🇨🇭</span>
+          <div>
+            <h3 class="modal-title" id="modal-heading">Schweizerisches Digital-Audit Zertifikat</h3>
+            <p class="modal-subtitle">Federated Legal Alignment Protocol • Swiss AI CSCS Alps</p>
+          </div>
+        </div>
+        <button type="button" id="close-modal-btn" class="modal-close-btn" aria-label="Schliessen">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="cert-formal-header">
+          <div class="cert-stamp">
+            <span class="stamp-title">HELVETIA VERITAS</span>
+            <span class="stamp-code">FADP SOVEREIGN</span>
+            <span class="stamp-sub">CSCS TIER-4</span>
+          </div>
+          <div class="cert-metadata">
+            <p><strong>Audit-ID:</strong> <span id="modal-audit-id">--</span></p>
+            <p><strong>Zeitstempel (UTC):</strong> <span id="modal-timestamp">--</span></p>
+            <p><strong>Infrastruktur:</strong> <span id="modal-infrastructure">--</span></p>
+            <p><strong>Rechtsrahmen:</strong> <span id="modal-regulation">--</span></p>
+            <p><strong>Modell:</strong> <span id="modal-model">--</span></p>
+          </div>
+        </div>
+
+        <div class="raw-json-viewer">
+          <div class="json-header">
+            <span>Vollständiges Audit-Payload (Gerichts- und ERP-Validierung)</span>
+            <button type="button" id="copy-json-btn" class="copy-json-btn">JSON kopieren</button>
+          </div>
+          <pre class="json-pre"><code id="modal-json-content">Keine Daten geladen.</code></pre>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="modal-download-pdf-btn" class="modal-action-btn primary">🏛️ Dossier (.PDF)</button>
+        <button type="button" id="modal-download-btn" class="modal-action-btn secondary">Audit-Zertifikat (.JSON)</button>
+        <button type="button" id="modal-close-action-btn" class="modal-action-btn secondary">Schliessen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
