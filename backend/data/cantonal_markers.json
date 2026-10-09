@@ -1,0 +1,250 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "corpus": "HelvetiaVeritas Sovereign Dialect Marker Database",
+    "description": "Curated lexical, morphological and phonological markers for Alemannic Swiss German dialect classification",
+    "supported_cantons": ["ZH", "BE", "BS", "SG"]
+  },
+  "cantons": {
+    "ZH": {
+      "code": "ZH",
+      "name": "Zürich",
+      "dialect_name": "Züritüütsch",
+      "region": "Mittelland / Grossraum Zürich",
+      "coat_of_arms": "🔵⚪ (Blau-Weiss geteilt)",
+      "color": "#0055A5",
+      "phonology_rules": [
+        {
+          "name": "Zurich Plural -ed",
+          "pattern": "\\b[a-zäöü]+(ed|end)\\b",
+          "description": "2nd & 3rd person plural verb endings with '-ed' (e.g. mached, schaffed, händ)",
+          "weight": 2.2
+        },
+        {
+          "name": "Zurich Negation 'nöd'",
+          "pattern": "\\b(nöd|noed)\\b",
+          "description": "Standard Zurich negation 'nöd' (contrasts with Bern 'nid' and Basel 'nit')",
+          "weight": 3.5
+        },
+        {
+          "name": "Zurich Diphthong 'üüt'",
+          "pattern": "\\b(nüüt|lüüt|züüg)\\b",
+          "description": "Long 'üü' preservation in common core words",
+          "weight": 2.5
+        }
+      ],
+      "markers": [
+        {"token": "poschte", "gloss_de": "einkaufen", "weight": 4.0},
+        {"token": "lüte", "gloss_de": "anrufen / läuten", "weight": 3.0},
+        {"token": "alüte", "gloss_de": "anrufen", "weight": 3.5},
+        {"token": "aalüte", "gloss_de": "anrufen", "weight": 3.5},
+        {"token": "nöd", "gloss_de": "nicht", "weight": 3.8},
+        {"token": "noed", "gloss_de": "nicht", "weight": 3.5},
+        {"token": "nüüt", "gloss_de": "nichts", "weight": 3.0},
+        {"token": "wöschchuchi", "gloss_de": "Waschküche", "weight": 3.2},
+        {"token": "chuchichäschtli", "gloss_de": "Küchenschränkchen", "weight": 3.0},
+        {"token": "abgmacht", "gloss_de": "abgemacht / vereinbart", "weight": 2.5},
+        {"token": "chinde", "gloss_de": "Kinder", "weight": 2.8},
+        {"token": "chind", "gloss_de": "Kind", "weight": 2.0},
+        {"token": "ghörig", "gloss_de": "gehörig / ordentlich", "weight": 2.5},
+        {"token": "chrampf", "gloss_de": "harte Arbeit / Mühe", "weight": 2.8},
+        {"token": "hütt", "gloss_de": "heute", "weight": 2.4},
+        {"token": "znacht", "gloss_de": "Abendessen", "weight": 2.0},
+        {"token": "zmittag", "gloss_de": "Mittagessen", "weight": 2.0},
+        {"token": "bünzli", "gloss_de": "Spiessbürger", "weight": 2.5},
+        {"token": "stutz", "gloss_de": "Franken (Geld)", "weight": 2.2},
+        {"token": "sali", "gloss_de": "Hallo (Begrüssung)", "weight": 2.0},
+        {"token": "abghänkt", "gloss_de": "aufgelegt (Telefon)", "weight": 3.0},
+        {"token": "gschäft", "gloss_de": "Geschäft / Betrieb", "weight": 2.0},
+        {"token": "mached", "gloss_de": "machen (Plural)", "weight": 3.0},
+        {"token": "händ", "gloss_de": "haben (Plural)", "weight": 2.8},
+        {"token": "hend", "gloss_de": "haben (Plural)", "weight": 2.5},
+        {"token": "chönd", "gloss_de": "können (Plural)", "weight": 2.8},
+        {"token": "wüssed", "gloss_de": "wissen (Plural)", "weight": 2.8},
+        {"token": "schaffed", "gloss_de": "arbeiten (Plural)", "weight": 3.0},
+        {"token": "zäme", "gloss_de": "zusammen", "weight": 2.0},
+        {"token": "öpper", "gloss_de": "jemand", "weight": 2.0},
+        {"token": "öppis", "gloss_de": "etwas", "weight": 2.0},
+        {"token": "lose", "gloss_de": "zuhören", "weight": 1.8},
+        {"token": "gopferteli", "gloss_de": "Verflixt (Fluch)", "weight": 3.0}
+      ]
+    },
+    "BE": {
+      "code": "BE",
+      "name": "Bern",
+      "dialect_name": "Bärndütsch",
+      "region": "Bern Mittelland / Oberland",
+      "coat_of_arms": "🐻 (Rot-Gelb mit Bär)",
+      "color": "#D8232A",
+      "phonology_rules": [
+        {
+          "name": "Bernese L-Vocalisation",
+          "pattern": "\\b[a-zäöü]*(ou|eu)[a-zäöü]*\\b",
+          "description": "Vocalisation of 'l' after vowels into 'u/ou' (e.g. choufe, sauz, houz, vou, gieu)",
+          "weight": 3.6
+        },
+        {
+          "name": "Bernese nd -> ng Transition",
+          "pattern": "\\b(finge|ching|angere|hang|stang)\\b",
+          "description": "Shift of -nd- to -ng- (e.g. ching statt chind, finge statt finde)",
+          "weight": 3.8
+        },
+        {
+          "name": "Bernese Negation 'nid'",
+          "pattern": "\\b(nid|nüt)\\b",
+          "description": "Bernese negation particle 'nid' / 'nüt'",
+          "weight": 2.8
+        }
+      ],
+      "markers": [
+        {"token": "äuä", "gloss_de": "vielleicht / wohl / sicher nicht", "weight": 5.0},
+        {"token": "aue", "gloss_de": "wohl / doch", "weight": 4.5},
+        {"token": "geng", "gloss_de": "immer / stets", "weight": 5.0},
+        {"token": "gäbig", "gloss_de": "praktisch / angenehm / passend", "weight": 4.5},
+        {"token": "gieu", "gloss_de": "Junge / Bub", "weight": 4.5},
+        {"token": "meitschi", "gloss_de": "Mädchen", "weight": 4.0},
+        {"token": "choufe", "gloss_de": "kaufen", "weight": 4.5},
+        {"token": "choufä", "gloss_de": "kaufen", "weight": 4.5},
+        {"token": "ching", "gloss_de": "Kinder / Kind", "weight": 4.5},
+        {"token": "finge", "gloss_de": "finden", "weight": 4.0},
+        {"token": "gopfridstutz", "gloss_de": "Herrgottnochmal (Berner Ausruf)", "weight": 4.8},
+        {"token": "chly", "gloss_de": "klein / ein wenig", "weight": 3.5},
+        {"token": "chli", "gloss_de": "klein / ein wenig", "weight": 2.0},
+        {"token": "birebitzeli", "gloss_de": "ein ganz kleines bisschen", "weight": 4.2},
+        {"token": "bitzeli", "gloss_de": "ein bisschen", "weight": 2.5},
+        {"token": "grüessech", "gloss_de": "Grüssen Sie Gott (förmliche Begrüssung)", "weight": 4.5},
+        {"token": "grüessech wohl", "gloss_de": "Guten Tag allerseits", "weight": 5.0},
+        {"token": "muesch", "gloss_de": "musst du", "weight": 2.5},
+        {"token": "wosch", "gloss_de": "willst du", "weight": 2.8},
+        {"token": "chunt", "gloss_de": "kommt", "weight": 2.5},
+        {"token": "chöit", "gloss_de": "könnt ihr / können Sie", "weight": 3.8},
+        {"token": "döft", "gloss_de": "dürft ihr", "weight": 3.5},
+        {"token": "wüu", "gloss_de": "weil", "weight": 4.0},
+        {"token": "zueche", "gloss_de": "hinzu / heran", "weight": 3.5},
+        {"token": "dr", "gloss_de": "der", "weight": 2.2},
+        {"token": "dä", "gloss_de": "dieser", "weight": 2.0},
+        {"token": "ds", "gloss_de": "das", "weight": 3.0},
+        {"token": "nid", "gloss_de": "nicht", "weight": 2.8},
+        {"token": "nüt", "gloss_de": "nichts", "weight": 2.5},
+        {"token": "hüt", "gloss_de": "heute", "weight": 2.2},
+        {"token": "u", "gloss_de": "und", "weight": 2.5},
+        {"token": "ig", "gloss_de": "ich", "weight": 3.2},
+        {"token": "mir sy", "gloss_de": "wir sind", "weight": 4.0},
+        {"token": "loset", "gloss_de": "hört zu", "weight": 2.8}
+      ]
+    },
+    "BS": {
+      "code": "BS",
+      "name": "Basel-Stadt",
+      "dialect_name": "Baseldytsch",
+      "region": "Nordwestschweiz / Dreiländereck",
+      "coat_of_arms": "⬛⚪ (Baselstab schwarz auf weiss)",
+      "color": "#1C1C1E",
+      "phonology_rules": [
+        {
+          "name": "Basel Negation 'nit'",
+          "pattern": "\\b(nit|nimmi)\\b",
+          "description": "Distinctive High-Alemannic negation 'nit' / 'nimmi' (nicht mehr)",
+          "weight": 3.8
+        },
+        {
+          "name": "Basel Open Diphthong 'ai'",
+          "pattern": "\\b(kai|nai|daas|waas)\\b",
+          "description": "Open vowels and diphthongs (kai statt kei, nai statt nei)",
+          "weight": 4.0
+        },
+        {
+          "name": "Basel Clitic Articles",
+          "pattern": "\\b(dr|s|imme|zem)\\b",
+          "description": "Clitic definite articles and contracted prepositions (zem, imme)",
+          "weight": 2.8
+        }
+      ],
+      "markers": [
+        {"token": "verhebe", "gloss_de": "standhalten / funktionieren", "weight": 4.8},
+        {"token": "vorig", "gloss_de": "übrig / überflüssig", "weight": 4.5},
+        {"token": "löli", "gloss_de": "Einfaltspinsel / Dummkopf", "weight": 4.5},
+        {"token": "birsig", "gloss_de": "Birsig (Basler Fluss)", "weight": 4.0},
+        {"token": "schugger", "gloss_de": "Polizist / Polizei", "weight": 4.8},
+        {"token": "wäje", "gloss_de": "wegen", "weight": 4.0},
+        {"token": "uff", "gloss_de": "auf", "weight": 3.5},
+        {"token": "drnäbe", "gloss_de": "daneben", "weight": 3.2},
+        {"token": "nit", "gloss_de": "nicht", "weight": 3.8},
+        {"token": "nimmi", "gloss_de": "nicht mehr", "weight": 4.2},
+        {"token": "kai", "gloss_de": "kein", "weight": 4.0},
+        {"token": "nai", "gloss_de": "nein", "weight": 3.8},
+        {"token": "daas", "gloss_de": "das", "weight": 3.2},
+        {"token": "zem", "gloss_de": "zum", "weight": 3.5},
+        {"token": "imme", "gloss_de": "in einem", "weight": 3.5},
+        {"token": "hitte", "gloss_de": "heute", "weight": 3.8},
+        {"token": "zeerscht", "gloss_de": "zuerst", "weight": 3.8},
+        {"token": "drby", "gloss_de": "dabei", "weight": 3.0},
+        {"token": "drvo", "gloss_de": "davon", "weight": 3.0},
+        {"token": "gly", "gloss_de": "bald", "weight": 3.2},
+        {"token": "sälü", "gloss_de": "Hallo (Begrüssung)", "weight": 2.5},
+        {"token": "sälü zämme", "gloss_de": "Hallo zusammen", "weight": 3.8},
+        {"token": "zämme", "gloss_de": "zusammen", "weight": 2.8},
+        {"token": "heer", "gloss_de": "hören", "weight": 3.0},
+        {"token": "druff", "gloss_de": "darauf", "weight": 3.0}
+      ]
+    },
+    "SG": {
+      "code": "SG",
+      "name": "St. Gallen",
+      "dialect_name": "Sanggallerdütsch",
+      "region": "Ostschweiz",
+      "coat_of_arms": "🟢⚪ (Grün mit Rutenbündel)",
+      "color": "#16A34A",
+      "phonology_rules": [
+        {
+          "name": "East Swiss Monophthongization / Vowel Lengthening",
+          "pattern": "\\b(bomm|khä|chääs)\\b",
+          "description": "Characteristic broad vowels (e.g. bomm für Baum, khä für gehabt)",
+          "weight": 3.5
+        },
+        {
+          "name": "East Swiss Diminutive -li / Affricate",
+          "pattern": "\\b[a-zäöü]+(kch|chli)\\b",
+          "description": "Strong aspirated affricates and short diphthongs",
+          "weight": 3.0
+        }
+      ],
+      "markers": [
+        {"token": "khä", "gloss_de": "gehabt", "weight": 4.5},
+        {"token": "bomm", "gloss_de": "Baum", "weight": 4.5},
+        {"token": "aagfange", "gloss_de": "angefangen", "weight": 3.5},
+        {"token": "gsi", "gloss_de": "gewesen", "weight": 2.5},
+        {"token": "chli", "gloss_de": "klein / ein wenig", "weight": 2.5},
+        {"token": "mol", "gloss_de": "doch / einmal", "weight": 2.5},
+        {"token": "scho", "gloss_de": "schon", "weight": 2.0},
+        {"token": "hüt", "gloss_de": "heute", "weight": 2.0},
+        {"token": "nöd", "gloss_de": "nicht", "weight": 2.5},
+        {"token": "chreissägi", "gloss_de": "Kreissäge", "weight": 3.5},
+        {"token": "züüg", "gloss_de": "Zeug / Sachen", "weight": 2.8},
+        {"token": "gstande", "gloss_de": "gestanden", "weight": 2.5},
+        {"token": "böög", "gloss_de": "Figur / Querkopf", "weight": 3.0},
+        {"token": "wöched", "gloss_de": "Woche (Plural)", "weight": 3.0},
+        {"token": "hoi", "gloss_de": "Hallo (Begrüssung)", "weight": 2.2},
+        {"token": "hoi mitenand", "gloss_de": "Hallo zusammen", "weight": 2.8}
+      ]
+    }
+  },
+  "pan_swiss_markers": [
+    {"token": "isch", "gloss_de": "ist"},
+    {"token": "het", "gloss_de": "hat"},
+    {"token": "hend", "gloss_de": "haben"},
+    {"token": "händ", "gloss_de": "haben"},
+    {"token": "wo", "gloss_de": "als Relativpronomen (der/die/das)"},
+    {"token": "mini", "gloss_de": "meine"},
+    {"token": "morn", "gloss_de": "morgen"},
+    {"token": "chasch", "gloss_de": "kannst du"},
+    {"token": "chönne", "gloss_de": "können"},
+    {"token": "gschribe", "gloss_de": "geschrieben"},
+    {"token": "lüte", "gloss_de": "anrufen"},
+    {"token": "zfriede", "gloss_de": "zufrieden"},
+    {"token": "wäge", "gloss_de": "wegen"},
+    {"token": "nume", "gloss_de": "nur"},
+    {"token": "öppis", "gloss_de": "etwas"},
+    {"token": "öpper", "gloss_de": "jemand"}
+  ]
+}

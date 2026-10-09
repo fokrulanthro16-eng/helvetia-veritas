@@ -76,3 +76,5 @@ htmlcov/
 # Local Gemini / agent runtime generated files
 .gemini/
 .system_generated/
+
+.vercel

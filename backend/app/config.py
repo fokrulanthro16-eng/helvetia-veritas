@@ -7,12 +7,13 @@ statutory indices paths, and cryptographic attestation seeds.
 
 import os
 from pathlib import Path
+from typing import Optional, List, Dict
 from pydantic_settings import BaseSettings
 
 
 def _resolve_base_dir() -> Path:
     current = Path(__file__).resolve().parent
-    for candidate in [current.parent.parent, current.parent, Path.cwd()]:
+    for candidate in [current.parent.parent, current.parent, current, Path.cwd()]:
         if (candidate / "data").exists():
             return candidate
     return current.parent.parent
