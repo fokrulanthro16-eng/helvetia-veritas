@@ -15,6 +15,9 @@
 </p>
 
 <p align="center">
+  <a href="https://helvetia-veritas.vercel.app">
+    <img src="https://img.shields.io/badge/🌐_Live_Deployment-helvetia--veritas.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo on Vercel"/>
+  </a>
   <a href="https://youtu.be/pmgXygybntg">
     <img src="https://img.shields.io/badge/▶_YouTube_Demo-Watch_Product_Walkthrough-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch Demo on YouTube"/>
   </a>
