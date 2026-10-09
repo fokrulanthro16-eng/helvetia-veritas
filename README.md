@@ -16,11 +16,19 @@
 
 <p align="center">
   <a href="https://helvetia-veritas.vercel.app">
-    <img src="https://img.shields.io/badge/🌐_Live_Deployment-helvetia--veritas.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo on Vercel"/>
+    <img src="https://img.shields.io/badge/🌐_Live_Demo-helvetia--veritas.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo on Vercel"/>
+  </a>
+  <a href="https://helvetia-veritas.vercel.app/api/v1/presets">
+    <img src="https://img.shields.io/badge/⚡_API_Base-Live_Endpoints-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="Live API Base"/>
   </a>
   <a href="https://youtu.be/pmgXygybntg">
     <img src="https://img.shields.io/badge/▶_YouTube_Demo-Watch_Product_Walkthrough-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch Demo on YouTube"/>
   </a>
+</p>
+
+<p align="center">
+  <strong>Live Production Deployment:</strong> <a href="https://helvetia-veritas.vercel.app">https://helvetia-veritas.vercel.app</a><br/>
+  <strong>Live Sovereign API Base:</strong> <a href="https://helvetia-veritas.vercel.app/api/v1/presets">https://helvetia-veritas.vercel.app/api/v1/presets</a>
 </p>
 
 ---
@@ -172,13 +180,22 @@ flowchart TD
 
 ---
 
-## 6. Quickstart & Local Setup Guide
+## 6. Live Access & Local Setup Guide
 
-### 6.1. Prerequisites
+### 6.1. Instant Live Access (Vercel Cloud Deployment)
+
+The full-stack sovereign pipeline is deployed and globally accessible on Vercel:
+
+- **Live Enterprise Dashboard**: [https://helvetia-veritas.vercel.app](https://helvetia-veritas.vercel.app)
+- **Live Cantonal Presets API**: [https://helvetia-veritas.vercel.app/api/v1/presets](https://helvetia-veritas.vercel.app/api/v1/presets)
+- **Live System Health Check**: [https://helvetia-veritas.vercel.app/api/health](https://helvetia-veritas.vercel.app/api/health)
+- **Live Interactive Swagger Docs**: [https://helvetia-veritas.vercel.app/docs](https://helvetia-veritas.vercel.app/docs)
+
+### 6.2. Prerequisites
 - **Python 3.11+** installed
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 
-### 6.2. Installation
+### 6.3. Local Installation
 
 1. **Clone the repository**:
    ```bash
